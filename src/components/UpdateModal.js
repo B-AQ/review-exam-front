@@ -15,8 +15,8 @@ export class UpdateModal extends Component {
             <Form.Control
               type="text"
               placeholder="name"
-              name="name"
               defaultValue={this.props.updateObj.name}
+              name="name"
             />
           </Form.Group>
 
@@ -25,8 +25,8 @@ export class UpdateModal extends Component {
             <Form.Control
               type="text"
               placeholder="photo"
-              name="photo"
               defaultValue={this.props.updateObj.photo}
+              name="photo"
             />
           </Form.Group>
 
@@ -35,8 +35,8 @@ export class UpdateModal extends Component {
             <Form.Control
               type="text"
               placeholder="Instructions"
-              name="instructions"
               defaultValue={this.props.updateObj.instructions}
+              name="instructions"
             />
           </Form.Group>
 

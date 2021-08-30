@@ -45,19 +45,17 @@ class FavFlowers extends React.Component {
       });
   };
 
-  updatefav = ((event) => {
-    event.preventDefault();
-    const {user} =this.props.auth0;
+  updateFav = (event) => {
+    // event.preventDefault();
     const flowerId = this.state.updateObj._id;
     const body = {
       name: event.target.name.value,
       photo: event.target.photo.value,
       instructions: event.target.instructions.value,
-      email:user.email
     };
     axios
       .put(`${process.env.REACT_APP_SERVER}/update/${flowerId}`, body)
-      .then(update => {
+      .then((update) => {
         const flowerArr = this.state.favFlowers.map((flower) => {
           if (flower === flowerId) {
             flower.name = update.data.name;
@@ -74,19 +72,19 @@ class FavFlowers extends React.Component {
           updateObj: {},
         });
       });
-  });
+  };
 
   render() {
     return (
       <>
-        {this.showingModel && 
+        {this.showingModel && (
           <UpdateModal
             show={this.state.showUpdateModel}
             showingModel={this.showingModel}
-            updatefav={this.updatefav}
+            updateFav={this.updateFav}
             updateObj={this.state.updateObj}
           />
-        }
+        )}
         <Row xs={1} md={5} className="g-4">
           {this.state.favFlowers.map((flower, idx) => {
             return (
